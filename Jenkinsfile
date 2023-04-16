@@ -7,7 +7,7 @@ pipeline {
 
         stage('Build docker image') {
             steps {  
-                sh 'docker build -t $DOCKERHUB_CREDENTIALS_USR/test/flaskapp:$BUILD_NUMBER .'
+                sh 'docker build -t test/flaskapp:$BUILD_NUMBER .'
             }
         }
         stage('login to dockerhub') {
