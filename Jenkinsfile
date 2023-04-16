@@ -1,5 +1,4 @@
 pipeline {
-    def docker = 'DockerHub'
     agent any 
     environment {
     DOCKERHUB_CREDENTIALS = credentials('eliza-dockerhub')
