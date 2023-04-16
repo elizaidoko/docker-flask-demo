@@ -17,7 +17,7 @@ pipeline {
         }
         stage('push image') {
             steps{
-                sh 'docker push flaskapp:$BUILD_NUMBER'
+                sh 'docker push $DOCKERHUB_CREDENTIALS_USR/test/flaskapp:$BUILD_NUMBER'
             }
         }
 }
