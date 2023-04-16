@@ -1,4 +1,5 @@
 pipeline {
+    def docker = 'DockerHub'
     agent any 
     environment {
     DOCKERHUB_CREDENTIALS = credentials('eliza-dockerhub')
@@ -7,7 +8,7 @@ pipeline {
 
         stage('Build docker image') {
             steps {  
-                sh 'docker build -t ylmt/flaskapp:$BUILD_NUMBER .'
+                sh '$docker build -t ylmt/flaskapp:$BUILD_NUMBER .'
             }
         }
         stage('login to dockerhub') {
